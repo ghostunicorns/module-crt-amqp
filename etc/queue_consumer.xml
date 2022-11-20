@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright © GhostUnicorns. All rights reserved.
+  ~ See LICENSE and/or COPYING.txt for license details.
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
+    <!-- Collectors -->
+    <consumer name="crt.collector.1"
+              queue="crt.collector.queue"
+              handler="GhostUnicorns\CrtAmqp\Model\Consumer\CollectorConsumer::process"
+              connection="amqp"
+              maxMessages="5000"/>
+    <consumer name="crt.collector.2"
+              queue="crt.collector.queue"
+              handler="GhostUnicorns\CrtAmqp\Model\Consumer\CollectorConsumer::process"
+              connection="amqp"
+              maxMessages="5000"/>
+    <consumer name="crt.collector.3"
+              queue="crt.collector.queue"
+              handler="GhostUnicorns\CrtAmqp\Model\Consumer\CollectorConsumer::process"
+              connection="amqp"
+              maxMessages="5000"/>
+
+    <!-- Refiners -->
+    <consumer name="crt.refiner.1"
+              queue="crt.refiner.queue"
+              handler="GhostUnicorns\CrtAmqp\Model\Consumer\RefinerConsumer::process"
+              connection="amqp"
+              maxMessages="5000"/>
+    <consumer name="crt.refiner.2"
+              queue="crt.refiner.queue"
+              handler="GhostUnicorns\CrtAmqp\Model\Consumer\RefinerConsumer::process"
+              connection="amqp"
+              maxMessages="5000"/>
+    <consumer name="crt.refiner.3"
+              queue="crt.refiner.queue"
+              handler="GhostUnicorns\CrtAmqp\Model\Consumer\RefinerConsumer::process"
+              connection="amqp"
+              maxMessages="5000"/>
+
+    <!-- Transferors -->
+    <consumer name="crt.transferor.1"
+              queue="crt.transferor.queue"
+              handler="GhostUnicorns\CrtAmqp\Model\Consumer\TransferorConsumer::process"
+              connection="amqp"
+              maxMessages="5000"/>
+    <consumer name="crt.transferor.2"
+              queue="crt.transferor.queue"
+              handler="GhostUnicorns\CrtAmqp\Model\Consumer\TransferorConsumer::process"
+              connection="amqp"
+              maxMessages="5000"/>
+    <consumer name="crt.transferor.3"
+              queue="crt.transferor.queue"
+              handler="GhostUnicorns\CrtAmqp\Model\Consumer\TransferorConsumer::process"
+              connection="amqp"
+              maxMessages="5000"/>
+</config>

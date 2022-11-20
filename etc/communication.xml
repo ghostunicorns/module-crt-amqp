@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright © GhostUnicorns. All rights reserved.
+  ~ See LICENSE and/or COPYING.txt for license details.
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
+    <!-- Collectors -->
+    <topic name="crt.collector" request="GhostUnicorns\CrtAmqp\Api\Data\CollectorInfoInterface" />
+
+    <!-- Refiners -->
+    <topic name="crt.refiner" request="GhostUnicorns\CrtAmqp\Api\Data\RefinerInfoInterface" />
+
+    <!-- Transferors -->
+    <topic name="crt.transferor" request="GhostUnicorns\CrtAmqp\Api\Data\TransferorInfoInterface" />
+</config>
