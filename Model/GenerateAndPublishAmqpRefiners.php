@@ -57,13 +57,13 @@ class GenerateAndPublishAmqpRefiners
 
         /** @var EntityInterface[] $entities */
         foreach ($allActivityEntities as $entityIdentifier => $entities) {
-            $this->refinerPublisher->execute($activityId, $entityIdentifier);
-
             $this->refinerRepository->createOrUpdate(
                 $activityId,
                 $entityIdentifier,
                 AmqpStateInterface::ADDED_TO_QUEUE
             );
+
+            $this->refinerPublisher->execute($activityId, $entityIdentifier);
         }
     }
 }

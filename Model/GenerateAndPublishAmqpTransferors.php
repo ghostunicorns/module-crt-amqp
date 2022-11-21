@@ -91,13 +91,13 @@ class GenerateAndPublishAmqpTransferors
                 continue;
             }
 
-            $this->transferorPublisher->execute($activityId, $transferorType);
-
             $this->transferorRepository->createOrUpdate(
                 $activityId,
                 $transferorType,
                 AmqpStateInterface::ADDED_TO_QUEUE
             );
+
+            $this->transferorPublisher->execute($activityId, $transferorType);
         }
     }
 

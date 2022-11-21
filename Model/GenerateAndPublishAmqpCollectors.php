@@ -91,13 +91,13 @@ class GenerateAndPublishAmqpCollectors
                 continue;
             }
 
-            $this->collectorPublisher->execute($activityId, $collectorType);
-
             $this->collectorRepository->createOrUpdate(
                 $activityId,
                 $collectorType,
                 AmqpStateInterface::ADDED_TO_QUEUE
             );
+
+            $this->collectorPublisher->execute($activityId, $collectorType);
         }
     }
 
